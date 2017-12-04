@@ -4,29 +4,24 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, ZAbstractConnection, ZConnection;
+  Dialogs, Grids, DBGrids, StdCtrls, ExtCtrls, RzPanel, DB,
+  ZAbstractRODataset, ZAbstractDataset, ZDataset;
 
 type
-  Tfmenu = class(TForm)
-    pnl1: TPanel;
-    pnl2: TPanel;
-    pnl3: TPanel;
-    lbl1: TLabel;
-    lbl2: TLabel;
-    btn1: TButton;
-    btn2: TButton;
-    btn3: TButton;
-    btn4: TButton;
-    btn5: TButton;
-    btn6: TButton;
-    btn7: TButton;
-    btn8: TButton;
-    lbl3: TLabel;
-    procedure btn1Click(Sender: TObject);
-    procedure btn5Click(Sender: TObject);
-    procedure btn6Click(Sender: TObject);
-    procedure btn7Click(Sender: TObject);
-    procedure btn8Click(Sender: TObject);
+  TForm4 = class(TForm)
+    RzPanel1: TRzPanel;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    DBGrid1: TDBGrid;
+    ZQuery1: TZQuery;
+    DataSource1: TDataSource;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,38 +29,18 @@ type
   end;
 
 var
-  fmenu: Tfmenu;
+  Form4: TForm4;
 
 implementation
 
 uses
-  Unit5, Unit6, Unit7, Unit8, Unit9;
+  Unit2;
 
 {$R *.dfm}
 
-procedure Tfmenu.btn1Click(Sender: TObject);
+procedure TForm4.Button1Click(Sender: TObject);
 begin
-arsipanggota.ShowModal;
-end;
-
-procedure Tfmenu.btn5Click(Sender: TObject);
-begin
-fanggota.ShowModal;
-end;
-
-procedure Tfmenu.btn6Click(Sender: TObject);
-begin
-fpegawai.ShowModal;
-end;
-
-procedure Tfmenu.btn7Click(Sender: TObject);
-begin
-fbuku.ShowModal;
-end;
-
-procedure Tfmenu.btn8Click(Sender: TObject);
-begin
-fkelas.ShowModal;
+Form2.ShowModal;
 end;
 
 end.
